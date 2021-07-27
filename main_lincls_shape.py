@@ -26,8 +26,8 @@ from moco.data_utils import PointCloudNormalize
 from moco.builder_shape import LinCls
 from moco.dgcnn import DGCNN
 
-import Pointnet_Pointnet2_pytorch.models.pointnet_shape as pointnet
-from Pointnet_Pointnet2_pytorch.data_utils.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
+import moco.pointnet as pointnet
+from moco.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
 
 model_names = ['PointNet', 'DGCNN']
 
