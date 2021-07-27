@@ -12,7 +12,7 @@ This is the original PyTorch implementation of the [Staying in Shape paper](http
 
 ### Preparation
 
-Download the aligned version of ModelNet40 [here](https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip) and ShapeNet [here](https://shapenet.org/). You may also need to add ```models``` folder to the base directory. 
+Download the aligned version of ModelNet40 [here](https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip) and ShapeNet [here](https://shapenet.org/). You will also need to add a ```models``` folder to the base directory. 
 
 ### Unsupervised Training
 
