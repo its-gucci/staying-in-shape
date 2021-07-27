@@ -29,9 +29,9 @@ python main_moco_shape.py \
 The available augmentations are ```--orth```,```--rip```, ```--perturb```, ```--interp```, ```--rotation```, ```--y-rotation```, which are described in the paper. Multiple data augmentation settings in the paper uses the ```--rand``` flag, which applies a random augmentation out of the augmentations provided to the model, as opposed to sequentially. Models are saved in ```models/```. 
 
 
-### ModelNet40 Classification
+### 2-layer MLP Classification
 
-With a pre-trained model, to train a supervised MLP classifier, run:
+With a pre-trained model, to train a supervised 2-layer MLP classifier, run:
 ```
 python main_lincls.py \
   [your path to modelnet40] \
