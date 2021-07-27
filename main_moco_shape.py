@@ -28,11 +28,9 @@ import moco.builder
 import moco.builder_shape
 import moco.shape_transforms as shape_transforms
 from moco.data_utils import ShapeNetDataLoader, MiniShapeNetDataLoader, PointCloudNormalize
-from moco.dgcnn import DGCNN, DGCNN_NOBN
 
-import Pointnet_Pointnet2_pytorch.models.pointnet_shape as pointnet
-from Pointnet_Pointnet2_pytorch.models.pointnet2_cls_msg_shape import PointNet2 as pointnet2
-from Pointnet_Pointnet2_pytorch.data_utils.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
+import moco.pointnet as pointnet
+from moco.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
 
 model_names = ['PointNet', 'PointNet++', 'DGCNN']
 
