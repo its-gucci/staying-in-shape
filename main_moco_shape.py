@@ -28,6 +28,7 @@ import moco.builder
 import moco.builder_shape
 import moco.shape_transforms as shape_transforms
 from moco.data_utils import ShapeNetDataLoader, MiniShapeNetDataLoader, PointCloudNormalize
+from moco.dgcnn import DGCNN
 
 import moco.pointnet as pointnet
 from moco.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
