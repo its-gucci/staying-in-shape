@@ -29,10 +29,6 @@ from moco.dgcnn import DGCNN
 import Pointnet_Pointnet2_pytorch.models.pointnet_shape as pointnet
 from Pointnet_Pointnet2_pytorch.data_utils.ModelNetDataLoaderMoco import ModelNetDataLoaderMoco
 
-# model_names = sorted(name for name in models.__dict__
-#     if name.islower() and not name.startswith("__")
-#     and callable(models.__dict__[name]))
-
 model_names = ['PointNet', 'DGCNN']
 
 parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
@@ -190,7 +186,6 @@ def main_worker(gpu, ngpus_per_node, args):
                                 world_size=args.world_size, rank=args.rank)
     # create model
     print("=> creating model '{}'".format(args.arch))
-    # model = models.__dict__[args.arch]()
     if args.arch == 'PointNet':
         model = pointnet.PointNetEncoder()
     elif args.arch == 'DGCNN':
@@ -313,19 +308,6 @@ def main_worker(gpu, ngpus_per_node, args):
     cudnn.benchmark = True
 
     # Data loading code
-    traindir = os.path.join(args.data, 'train')
-    valdir = os.path.join(args.data, 'val')
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-
-#     train_dataset = datasets.ImageFolder(
-#         traindir,
-#         transforms.Compose([
-#             transforms.RandomResizedCrop(224),
-#             transforms.RandomHorizontalFlip(),
-#             transforms.ToTensor(),
-#             normalize,
-#         ]))
 
     # Better Shape Representation augmentations
     augmentation = []
@@ -379,15 +361,6 @@ def main_worker(gpu, ngpus_per_node, args):
         train_dataset, batch_size=args.batch_size, shuffle=(train_sampler is None),
         num_workers=args.workers, pin_memory=True, sampler=train_sampler)
 
-#     val_loader = torch.utils.data.DataLoader(
-#         datasets.ImageFolder(valdir, transforms.Compose([
-#             transforms.Resize(256),
-#             transforms.CenterCrop(224),
-#             transforms.ToTensor(),
-#             normalize,
-#         ])),
-#         batch_size=args.batch_size, shuffle=False,
-#         num_workers=args.workers, pin_memory=True)
     if args.mn10:
         val_dataset = ModelNetDataLoaderMoco(
             args.data,
