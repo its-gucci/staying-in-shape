@@ -42,7 +42,7 @@ python main_lincls.py \
   --mlp \
   --model-name [your classification model name]
 ```
-To run robustness experiments, the same augmentations flags are available as in the Unsupervised Training section. 
+To run robustness experiments, the same augmentation flags are available as in the Unsupervised Training section. 
 
 ### See Also
 This repository is based on [this implementation](https://github.com/facebookresearch/moco) of the [MoCo paper](https://arxiv.org/abs/1911.05722) and [MoCo v2 paper](https://arxiv.org/abs/2003.04297):
