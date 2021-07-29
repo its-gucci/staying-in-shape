@@ -23,7 +23,6 @@ import torchvision.datasets as datasets
 import torchvision.models as models
 
 import moco.loader
-import moco.builder
 
 import moco.builder_shape
 import moco.shape_transforms as shape_transforms
